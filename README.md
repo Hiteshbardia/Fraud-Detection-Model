@@ -61,3 +61,23 @@ Fraudulent transactions can cause significant losses to financial institutions.
 1. Clone this repository:
    ```bash
    git clone https://github.com/YourUsername/Fraud-Detection-Model.git
+
+## 8. Files in This Repository
+Fraud_detection.ipynb → Complete notebook with data cleaning, modeling, and evaluation.
+
+Screenshot_2025-08-03_150529.png → Top 10 feature importances identified by Random Forest.
+
+README.md → Project documentation and execution instructions.
+
+## 9. Tools & Libraries
+Programming: Python (Pandas, NumPy, Scikit-learn, Imbalanced-learn)
+
+Visualization: Matplotlib, Seaborn
+
+Modeling: Logistic Regression, Random Forest
+
+Environment: Jupyter Notebook
+
+## 10. Author
+Hitesh Bardia 
+
