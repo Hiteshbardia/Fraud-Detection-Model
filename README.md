@@ -1,6 +1,6 @@
 # Fraud Detection Model
 
-![Feature Importance](Screenshot_2025-08-03_150529.png)
+![Feature Importance](image.png)
 
 ---
 
