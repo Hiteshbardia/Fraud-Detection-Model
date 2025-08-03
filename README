@@ -1,0 +1,82 @@
+# Fraud Detection Model
+
+## 1. Overview
+This project aims to detect fraudulent financial transactions using machine learning techniques.  
+We built and evaluated predictive models on a dataset of 6.3 million transactions, addressing class imbalance and identifying key drivers of fraud.
+
+---
+
+## 2. Business Objective
+Fraudulent transactions pose significant risks to financial institutions and customers.  
+The goal is to:
+- Accurately identify fraudulent transactions in real time.
+- Reduce financial losses and false alerts.
+- Provide actionable insights to prevent future fraud.
+
+---
+
+## 3. Dataset
+- **Size:** 6,362,620 rows, 11 columns  
+- **Features:** Transaction type, amount, balances before and after transactions, fraud indicators  
+- **Target:** `isFraud` (1 = Fraud, 0 = Legitimate)
+
+**Key Steps in Data Preparation:**
+- Removed duplicate records.
+- Dropped irrelevant columns (`nameOrig`, `nameDest`).
+- One-hot encoded transaction type.
+- Addressed severe class imbalance (~0.13% fraud) using **SMOTE**.
+
+---
+
+## 4. Methodology
+1. **Exploratory Data Analysis (EDA):**  
+   - Checked class distribution and transaction patterns.
+   - Identified potential fraud indicators.
+
+2. **Model Development:**  
+   - Baseline model: Logistic Regression.  
+   - Advanced model: Random Forest.  
+
+3. **Model Evaluation:**  
+   - Confusion Matrix  
+   - Precision, Recall, F1-Score  
+   - ROC-AUC  
+
+---
+
+## 5. Results
+### Logistic Regression:
+- ROC-AUC: **0.986**
+- High recall but low precision (many false positives).
+
+### Random Forest:
+- ROC-AUC: **0.999**
+- Precision (Fraud): **67%**
+- Recall (Fraud): **94%**
+- Accuracy: **99.94%**
+
+**Key Fraud Predictors:**
+- Transaction type (`CASH_OUT`, `TRANSFER`)
+- Transaction amount
+- Account balances (`oldbalanceOrg`, `newbalanceOrig`)
+
+---
+
+## 6. Business Insights
+- Fraudsters often empty accounts via large transfers or cash-outs.
+- Abnormal balance changes and high-value transactions are strong indicators of fraud.
+
+---
+
+## 7. Recommendations
+1. Use Random Forest for real-time fraud detection.
+2. Flag large or unusual transfers (e.g., > ₹200,000).
+3. Add extra verification for high-risk transactions.
+4. Continuously retrain the model on new data to adapt to evolving fraud patterns.
+
+---
+
+## 8. How to Run
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/YourUsername/Fraud-Detection-Model.git
